@@ -1,0 +1,1024 @@
+<html lang="en"><!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleVerse</title>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleVerse – Fashion & Styling</title>
+  <link rel="shortcut icon" href="Brand-logo/Brand-logo.png " type="image/x-icon"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link
+   href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Josefin+Sans:wght@300;400;600&display=swap"
+   rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">StyleVerse</div>
+      <p style="color:var(--muted);font-size:.75rem;letter-spacing:4px;margin-top:8px;">FASHION & STYLING</p>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <!-- COMPARE BAR -->
+  <div id="compareBar">
+    <div class="compare-slots" id="compareSlots"></div>
+    <div class="compare-bar-actions" id="compareActions"></div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg" id="mainNav">
+    <div class="container">
+      <a class="nav-brand navbar-brand" href="#"><img src="Brand-logo/Brand-logo.png" alt="Brand-Logo" width="55px" class="logo"> StyleVerse</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stylists">Stylists</a></li>
+          <li class="nav-item"><a class="nav-link" href="#collections">Collections</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sizes">Size Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#About-Us">About Us</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn p-0 border-0 bg-transparent text-white cart-badge" onclick="showCart()">
+            <i class="fas fa-shopping-bag" style="font-size:1.1rem;color:var(--gold)"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="btn-outline-gold" onclick="$('#registerModal').modal('show')">Register</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SLIDER ===== -->
+  <section id="home">
+    <div id="heroSlider">
+      <div id="particles"></div>
+
+      <div class="hero-slide active" id="slide0">
+        <div class="slide-bg"
+          style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&auto=format&fit=crop')">
+        </div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="slide-tag">New Arrivals 2025</div>
+          <h1 class="slide-title">Define Your <span>Style</span><br>Tell Your Story</h1>
+          <p class="slide-sub">Curated fashion by Pakistan's finest stylists</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="#collections" class="btn-gold">Explore Collections</a>
+            <a href="#stylists" class="btn-outline-gold">Meet Stylists</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" id="slide1">
+        <div class="slide-bg"
+          style="background-image:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1400&auto=format&fit=crop')">
+        </div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="slide-tag">Summer Collection</div>
+          <h1 class="slide-title">Sun-Kissed <span>Elegance</span><br>Summer 2025</h1>
+          <p class="slide-sub">Light fabrics · Vibrant colors · Modern cuts</p>
+          <a href="#collections" class="btn-gold">Shop Summer</a>
+        </div>
+      </div>
+
+      <div class="hero-slide" id="slide2">
+        <div class="slide-bg"
+          style="background-image:url('https://images.unsplash.com/photo-1519657337289-077653f724ed?w=1400&auto=format&fit=crop')">
+        </div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="slide-tag">Bridal & Wedding</div>
+          <h1 class="slide-title">Your Perfect <span>Day</span><br>Begins Here</h1>
+          <p class="slide-sub">Exquisite bridal & groom collections</p>
+          <a href="#collections" class="btn-gold">Explore Bridal</a>
+        </div>
+      </div>
+
+      <div class="hero-slide" id="slide3">
+        <div class="slide-bg"
+          style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1400&auto=format&fit=crop')">
+        </div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="slide-tag">Kids Fashion</div>
+          <h1 class="slide-title">Little Ones <span>Big</span><br>Style Moments</h1>
+          <p class="slide-sub">Adorable collections for boys & girls</p>
+          <a href="#collections" class="btn-gold">Shop Kids</a>
+        </div>
+      </div>
+
+      <button class="slider-nav prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-nav next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+      <div class="slider-indicators" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="marquee-item">Summer Collection 2025</span>
+      <span class="marquee-item">Wedding Bridal</span>
+      <span class="marquee-item">Kids Fashion</span>
+      <span class="marquee-item">Winter Warmth</span>
+      <span class="marquee-item">Free Delivery Over Rs 5000</span>
+      <span class="marquee-item">New Arrivals Every Week</span>
+      <span class="marquee-item">Summer Collection 2025</span>
+      <span class="marquee-item">Wedding Bridal</span>
+      <span class="marquee-item">Kids Fashion</span>
+      <span class="marquee-item">Winter Warmth</span>
+      <span class="marquee-item">Free Delivery Over Rs 5000</span>
+      <span class="marquee-item">New Arrivals Every Week</span>
+    </div>
+  </div>
+
+  <!-- ===== STYLISTS ===== -->
+  <section id="stylists" class="section-dark">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-label">Our Team</div>
+        <h2 class="section-title">Meet the <em>Stylists</em></h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      <div class="row g-4 reveal">
+        <div class="col-6 col-md-3">
+          <div class="stylist-card reveal"
+            onclick="openStylistModal('Ayesha Malik','Bridal & Wedding Specialist','https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&auto=format&fit=crop')">
+            <img class="stylist-img"
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&auto=format&fit=crop"
+              alt="Ayesha Malik">
+            <div class="stylist-overlay">
+              <div class="stylist-name">Ayesha Malik</div>
+              <div class="stylist-spec">Bridal Specialist</div>
+              <div class="stylist-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stylist-card reveal"
+            onclick="openStylistModal('Zara Khan','Summer & Casual Wear','https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&auto=format&fit=crop')">
+            <img class="stylist-img"
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&auto=format&fit=crop"
+              alt="Zara Khan">
+            <div class="stylist-overlay">
+              <div class="stylist-name">Zara Khan</div>
+              <div class="stylist-spec">Summer Wear Expert</div>
+              <div class="stylist-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stylist-card reveal"
+            onclick="openStylistModal('Omar Sheikh','Men\'s Fashion','https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop')">
+            <img class="stylist-img"
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop"
+              alt="Omar Sheikh">
+            <div class="stylist-overlay">
+              <div class="stylist-name">Omar Sheikh</div>
+              <div class="stylist-spec">Men's Fashion</div>
+              <div class="stylist-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stylist-card reveal"
+            onclick="openStylistModal('Sara Noor','Kids & Winter Wear','https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop')">
+            <img class="stylist-img"
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop"
+              alt="Sara Noor">
+            <div class="stylist-overlay">
+              <div class="stylist-name">Sara Noor</div>
+              <div class="stylist-spec">Kids & Winter Wear</div>
+              <div class="stylist-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLLECTIONS ===== -->
+  <section id="collections">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-label">Browse</div>
+        <h2 class="section-title">Our <em>Collections</em></h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+
+      <!-- Quick Nav Pills -->
+      <div class="coll-quicknav mb-5">
+        <a href="#coll-kids-girl" class="coll-pill">👧 Girls Kids</a>
+        <a href="#coll-kids-boy" class="coll-pill">👦 Boys Kids</a>
+        <a href="#coll-summer-women" class="coll-pill">👗 Summer Women</a>
+        <a href="#coll-summer-men" class="coll-pill">👔 Summer Men</a>
+        <a href="#coll-wedding-bride" class="coll-pill">👰 Wedding Bride</a>
+        <a href="#coll-wedding-groom" class="coll-pill">🤵 Wedding Groom</a>
+        <a href="#coll-winter-men" class="coll-pill">🧥 Winter Men</a>
+        <a href="#coll-winter-women" class="coll-pill">🧣 Winter Women</a>
+      </div>
+
+      <!-- GIRLS KIDS -->
+      <div class="coll-section reveal" id="coll-kids-girl">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Kids Collection</div>
+            <h3 class="coll-section-title">👧 Girls <em>Kids</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-kids-girl"></div>
+      </div>
+
+      <!-- BOYS KIDS -->
+      <div class="coll-section reveal" id="coll-kids-boy">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Kids Collection</div>
+            <h3 class="coll-section-title">👦 Boys <em>Kids</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-kids-boy"></div>
+      </div>
+
+      <!-- SUMMER WOMEN -->
+      <div class="coll-section reveal" id="coll-summer-women">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Summer Collection</div>
+            <h3 class="coll-section-title">👗 Summer <em>Women</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-summer-women"></div>
+      </div>
+
+      <!-- SUMMER MEN -->
+      <div class="coll-section reveal" id="coll-summer-men">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Summer Collection</div>
+            <h3 class="coll-section-title">👔 Summer <em>Men</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-summer-men"></div>
+      </div>
+
+      <!-- WEDDING BRIDE -->
+      <div class="coll-section reveal" id="coll-wedding-bride">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Wedding Collection</div>
+            <h3 class="coll-section-title">👰 Wedding <em>Bride</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-wedding-bride"></div>
+      </div>
+
+      <!-- WEDDING GROOM -->
+      <div class="coll-section reveal" id="coll-wedding-groom">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Wedding Collection</div>
+            <h3 class="coll-section-title">🤵 Wedding <em>Groom</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-wedding-groom"></div>
+      </div>
+
+      <!-- WINTER MEN -->
+      <div class="coll-section reveal" id="coll-winter-men">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Winter Collection</div>
+            <h3 class="coll-section-title">🧥 Winter <em>Men</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-winter-men"></div>
+      </div>
+
+      <!-- WINTER WOMEN -->
+      <div class="coll-section reveal" id="coll-winter-women">
+        <div class="coll-section-header">
+          <div>
+            <div class="coll-section-label">Winter Collection</div>
+            <h3 class="coll-section-title">🧣 Winter <em>Women</em></h3>
+          </div>
+          <div class="coll-section-divider"></div>
+        </div>
+        <div class="row g-4" id="grid-winter-women"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SIZE GUIDE ===== -->
+  <section id="sizes" class="section-dark">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-label">Fit Perfect</div>
+        <h2 class="section-title">Size <em>Guide</em></h2>
+        <div class="section-divider mx-auto"></div>
+        <p style="color:var(--muted);max-width:500px;margin:0 auto;font-size:.88rem;">Find your perfect fit with our
+          comprehensive size charts for every category.</p>
+      </div>
+      <div class="size-guide-wrap reveal">
+        <div class="size-tabs p-3 border-bottom" style="border-color:rgba(201,168,76,.15)!important">
+          <button class="stab active" data-st="women">Women</button>
+          <button class="stab" data-st="men">Men</button>
+          <button class="stab" data-st="kids">Kids</button>
+        </div>
+        <div class="size-table-wrap">
+          <div class="st-pane active" id="st-women">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>Size</th>
+                  <th>Chest (in)</th>
+                  <th>Waist (in)</th>
+                  <th>Hips (in)</th>
+                  <th>Height (ft)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>XS</td>
+                  <td>32–33</td>
+                  <td>24–25</td>
+                  <td>34–35</td>
+                  <td>5'0–5'2</td>
+                </tr>
+                <tr>
+                  <td>S</td>
+                  <td>34–35</td>
+                  <td>26–27</td>
+                  <td>36–37</td>
+                  <td>5'2–5'4</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>36–37</td>
+                  <td>28–29</td>
+                  <td>38–39</td>
+                  <td>5'4–5'6</td>
+                </tr>
+                <tr>
+                  <td>L</td>
+                  <td>38–40</td>
+                  <td>30–32</td>
+                  <td>40–42</td>
+                  <td>5'5–5'7</td>
+                </tr>
+                <tr>
+                  <td>XL</td>
+                  <td>41–43</td>
+                  <td>33–35</td>
+                  <td>43–45</td>
+                  <td>5'6–5'8</td>
+                </tr>
+                <tr>
+                  <td>XXL</td>
+                  <td>44–46</td>
+                  <td>36–38</td>
+                  <td>46–48</td>
+                  <td>5'7–5'9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="st-pane" id="st-men">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>Size</th>
+                  <th>Chest (in)</th>
+                  <th>Waist (in)</th>
+                  <th>Shoulder (in)</th>
+                  <th>Height (ft)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>S</td>
+                  <td>36–38</td>
+                  <td>30–32</td>
+                  <td>17–17.5</td>
+                  <td>5'6–5'8</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>39–41</td>
+                  <td>33–35</td>
+                  <td>18–18.5</td>
+                  <td>5'8–5'10</td>
+                </tr>
+                <tr>
+                  <td>L</td>
+                  <td>42–44</td>
+                  <td>36–38</td>
+                  <td>19–19.5</td>
+                  <td>5'10–6'0</td>
+                </tr>
+                <tr>
+                  <td>XL</td>
+                  <td>45–47</td>
+                  <td>39–41</td>
+                  <td>20–20.5</td>
+                  <td>6'0–6'2</td>
+                </tr>
+                <tr>
+                  <td>XXL</td>
+                  <td>48–50</td>
+                  <td>42–44</td>
+                  <td>21–21.5</td>
+                  <td>6'1–6'3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="st-pane" id="st-kids">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>Age</th>
+                  <th>Height (cm)</th>
+                  <th>Weight (kg)</th>
+                  <th>Chest (in)</th>
+                  <th>Waist (in)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2–3 yrs</td>
+                  <td>92–98</td>
+                  <td>12–15</td>
+                  <td>21–22</td>
+                  <td>20–21</td>
+                </tr>
+                <tr>
+                  <td>4–5 yrs</td>
+                  <td>104–110</td>
+                  <td>16–19</td>
+                  <td>23–24</td>
+                  <td>21–22</td>
+                </tr>
+                <tr>
+                  <td>6–7 yrs</td>
+                  <td>116–122</td>
+                  <td>20–24</td>
+                  <td>25–26</td>
+                  <td>22–23</td>
+                </tr>
+                <tr>
+                  <td>8–9 yrs</td>
+                  <td>128–134</td>
+                  <td>25–30</td>
+                  <td>27–28</td>
+                  <td>23–24</td>
+                </tr>
+                <tr>
+                  <td>10–11 yrs</td>
+                  <td>140–146</td>
+                  <td>31–37</td>
+                  <td>29–30</td>
+                  <td>24–25</td>
+                </tr>
+                <tr>
+                  <td>12–13 yrs</td>
+                  <td>152–158</td>
+                  <td>38–46</td>
+                  <td>31–33</td>
+                  <td>25–27</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+   <!-- ===== STATS COUNTER ===== -->
+  <section class="section-darker">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-label">Our Journey</div>
+        <h2 class="section-title">StyleVerse in <em>Numbers</em></h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3 reveal">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-number" data-target="12500">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="stat-number" data-target="3200">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">Products Available</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-star"></i></div>
+            <div class="stat-number" data-target="4800">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">5-Star Reviews</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="stat-number" data-target="48">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">Expert Stylists</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section-darker">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-label">Happy Clients</div>
+        <h2 class="section-title">What They <em>Say</em></h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"StyleVerse completely transformed my wardrobe. Ayesha's bridal picks for my wedding
+              were absolutely stunning. Everyone complimented my look!"</p>
+            <div class="testi-author">
+              <div class="tav">FM</div>
+              <div>
+                <div class="testi-name">Fatima Mirza</div>
+                <div class="testi-loc">Karachi, Pakistan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"Best online fashion platform in Pakistan! The kids collection is amazing — my
+              daughter looks like a princess. Will definitely order again!"</p>
+            <div class="testi-author">
+              <div class="tav">RA</div>
+              <div>
+                <div class="testi-name">Rida Ahmed</div>
+                <div class="testi-loc">Lahore, Pakistan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="testi-card">
+            <div class="stars">★★★★☆</div>
+            <p class="testi-text">"Omar Sheikh helped me find the perfect groom sherwani. The quality is exceptional and
+              the delivery was super fast. Highly recommended!"</p>
+            <div class="testi-author">
+              <div class="tav">AH</div>
+              <div>
+                <div class="testi-name">Ali Hassan</div>
+                <div class="testi-loc">Islamabad, Pakistan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section-dark">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5 reveal">
+          <div class="section-label">Get in Touch</div>
+          <h2 class="section-title">Contact <em>Us</em></h2>
+          <div class="section-divider"></div>
+          <div class="contact-info-card d-flex gap-3 align-items-start mb-3">
+            <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div style="color:var(--gold);font-size:.78rem;letter-spacing:2px;margin-bottom:4px;">ADDRESS</div>
+              <div style="font-size:.9rem;">Shop 14, Fashion Street, Saddar<br>Karachi, Sindh, Pakistan</div>
+            </div>
+          </div>
+          <div class="contact-info-card d-flex gap-3 align-items-start mb-3">
+            <div class="cinfo-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div style="color:var(--gold);font-size:.78rem;letter-spacing:2px;margin-bottom:4px;">PHONE</div>
+              <a href="tel:+92300000000" style="color:var(--text);text-decoration:none;font-size:.9rem;">+92 300 000
+                0000</a>
+            </div>
+          </div>
+          <div class="contact-info-card d-flex gap-3 align-items-start mb-3">
+            <div class="cinfo-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div style="color:var(--gold);font-size:.78rem;letter-spacing:2px;margin-bottom:4px;">EMAIL</div>
+              <a href="mailto:hello@styleverse.pk"
+                style="color:var(--text);text-decoration:none;font-size:.9rem;">hello@styleverse.pk</a>
+            </div>
+          </div>
+          <div id="map">
+            <iframe width="100%" height="320" frameborder="0" style="border:0;border-radius:16px;" allowfullscreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.534192344293!2d67.0652637!3d24.9819581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb340e584b891c3%3A0x29b2cbc198ba2dbd!2sAptech%20Computer%20Education%20North%20Karachi%20Center!5e0!3m2!1sen!2s!4v1781106735205!5m2!1sen!2s">
+            </iframe>
+             </div>
+        </div>
+        <div class="col-lg-7 reveal">
+          <div
+            style="background:var(--card-bg);padding:40px;border-radius:var(--radius);border:1px solid rgba(201,168,76,.12);">
+            <h4 style="font-family:'Playfair Display',serif;color:var(--gold);margin-bottom:24px;">Send a Message</h4>
+            <form class="contact-form" onsubmit="submitContact(event)">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" placeholder="Phone Number">
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control"
+                    style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--muted);">
+                    <option value="">Select Stylist</option>
+                    <option>Ayesha Malik – Bridal</option>
+                    <option>Zara Khan – Summer</option>
+                    <option>Omar Sheikh – Men's</option>
+                    <option>Sara Noor – Kids & Winter</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="4"
+                    placeholder="Describe your style requirements, occasion, budget..."></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-gold w-100" style="border-radius:8px;">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- ===== ABOUT US ===== -->
+  <section id="About-Us" class="section-dark">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6 reveal">
+          <div class="about-img-grid">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" alt="StyleVerse Fashion" class="about-img-main">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&auto=format&fit=crop" alt="StyleVerse Collection" class="about-img-side">
+            <div class="about-badge-float">
+              <div style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:900;">5+</div>
+              <div style="font-size:.7rem;letter-spacing:2px;color:var(--muted);">YEARS OF STYLE</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">About <em>StyleVerse</em></h2>
+          <div class="section-divider"></div>
+          <p class="about-text">StyleVerse was born from a simple belief — every person deserves to look and feel extraordinary. Founded in Karachi in 2019, we set out to bridge the gap between Pakistan's talented fashion designers and style-conscious shoppers across the country.</p>
+          <p class="about-text">We handpick every piece in our collection, working directly with skilled artisans and designers who share our passion for quality, craftsmanship, and modern aesthetics. From bridal masterpieces to everyday casuals, every garment tells a story.</p>
+          <div class="about-values">
+            <div class="about-value-item">
+              <div class="av-icon"><i class="fas fa-gem"></i></div>
+              <div>
+                <div class="av-title">Premium Quality</div>
+                <div class="av-desc">Only the finest fabrics and craftsmanship make it to our shelves.</div>
+              </div>
+            </div>
+            <div class="about-value-item">
+              <div class="av-icon"><i class="fas fa-heart"></i></div>
+              <div>
+                <div class="av-title">Made with Love</div>
+                <div class="av-desc">Every piece is curated with passion for fashion and personal style.</div>
+              </div>
+            </div>
+            <div class="about-value-item">
+              <div class="av-icon"><i class="fas fa-shipping-fast"></i></div>
+              <div>
+                <div class="av-title">Fast Delivery</div>
+                <div class="av-desc">Delivering across Pakistan with care and speed, right to your door.</div>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn-gold mt-4" style="border-radius:8px;">Get in Touch <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+  <section>
+    <div class="container">
+      <div class="newsletter-wrap reveal">
+        <div class="section-label mb-2">Stay Updated</div>
+        <h2 class="section-title mb-3">Subscribe to <em>StyleVerse</em></h2>
+        <p style="color:var(--muted);margin-bottom:30px;font-size:.88rem;">Get exclusive offers, new arrivals & styling
+          tips in your inbox</p>
+        <div class="newsletter-input-wrap">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address..." id="nlEmail">
+          <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe <i
+              class="fas fa-paper-plane ms-2"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div ><img class="footer-brand" src="Brand-logo/Brand-logo.png" alt="brand Logo" width="30px" height="30px"> StyleVerse</div>
+          <p class="footer-desc">Pakistan's premier online fashion platform connecting style-conscious shoppers with
+            talented stylists. Elevate your wardrobe, elevate your life.</p>
+          <div class="social-links">
+            <a class="soc-btn" href="https://www.tiktok.com/en/"><i class="fab fa-instagram"></i></a>
+            <a class="soc-btn" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a class="soc-btn" href="https://www.tiktok.com/en/"><i class="fab fa-tiktok"></i></a>
+            <a class="soc-btn" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            <a class="soc-btn" href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Collections</div>
+          <ul class="footer-links">
+            <li><a href="#coll-kids-girl" >Kids Girls</a></li>
+            <li><a href="#coll-kids-boy">Kids Boys</a></li>
+            <li><a href="#coll-summer-women">Summer Women</a></li>
+            <li><a href="#coll-summer-men">Summer Men</a></li>
+            <li><a href="#coll-winter-women">Winter Women</a></li>
+            <li><a href="#coll-winter-men">Winter Men</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Wedding</div>
+          <ul class="footer-links">
+            <li><a href="#coll-wedding-bride">Bridal Wear</a></li>
+            <li><a href="#coll-wedding-groom">Groom Sherwani</a></li>
+            <li><a href="#coll-wedding-bride">Mehndi Outfits</a></li>
+            <li><a href="#coll-wedding-groom">Baraat Dresses</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#About-Us">About Us</a></li>
+            <li><a href="#stylists">Join as Stylist</a></li>
+            <li><a href="#About-Us">Privacy Policy</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="footer-bottom">
+        <p>&copy: 2026 StyleVerse. All rights reserved. | Made with  in Pakistan</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MODALS ===== -->
+
+  <!-- Register Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Join StyleVerse</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs mb-4" id="authTabs">
+            <li class="nav-item"><button class="nav-link active" onclick="switchAuth('reg')">Register</button></li>
+            <li class="nav-item"><button class="nav-link" onclick="switchAuth('log')" style="color: white !important;">Login</button></li>
+          </ul> 
+          <div id="regForm">
+            <div class="mb-3"><input type="text" class="form-control" placeholder="Full name" required
+               style="border:1px solid rgba(201,168,76,.2);" ></div>
+            <div class="mb-3"><input type="email" class="form-control" placeholder="Email" required="Email"
+                style="border:1px solid rgba(201,168,76,.2);"></div>
+            <div class="mb-3"><input type="password" class="form-control" placeholder="Password" required="password"
+                style="border:1px solid rgba(201,168,76,.2);"></div>
+            <div class="mb-3">
+              <select class="form-control"
+                style="border:1px solid rgba(201,168,76,.2);">
+                <option>Register as Customer</option>
+                <option>Register as Stylist</option>
+              </select>
+            </div>
+            <button class="btn-gold w-100" style="border-radius:8px;" onclick="doRegister()">Create Account</button>
+          </div>
+          <div id="logForm" style="display:none">
+            <div class="mb-3"><input type="email" class="form-control" placeholder="Email" required="Email"
+                style="border:1px solid rgba(201,168,76,.2);"></div>
+            <div class="mb-3"><input type="password" class="form-control" placeholder="Password" required="password"
+                style="border:1px solid rgba(201,168,76,.2);"></div>
+            <button class="btn-gold w-100" style="border-radius:8px;" onclick="doLogin()">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quick View Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pmTitle">Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-5">
+              <div class="qv-img"><img id="pmImg" src="" alt=""></div>
+            </div>
+            <div class="col-md-7">
+              <div style="color:var(--muted);font-size:.75rem;letter-spacing:3px;" id="pmStylist"></div>
+              <h4 id="pmName" style="font-family:'Playfair Display',serif;color:var(--text);margin:8px 0;"></h4>
+              <div class="qv-price" id="pmPrice"></div>
+              <p class="qv-desc" id="pmDesc"></p>
+              <div style="color:var(--gold);font-size:.78rem;letter-spacing:2px;margin-bottom:10px;">SELECT SIZE</div>
+              <div class="size-selector" id="pmSizes"></div>
+              <div style="color:var(--gold);font-size:.78rem;letter-spacing:2px;margin-bottom:10px;">FABRIC</div>
+              <div style="color:var(--text);font-size:.85rem;margin-bottom:20px;" id="pmFabric"></div>
+              <div class="d-flex gap-3 flex-wrap">
+                <button class="btn-gold" style="border-radius:8px;" onclick="addToCart()"><i
+                    class="fas fa-shopping-bag me-2"></i>Add to Cart</button>
+                <button class="btn-outline-gold" style="border-radius:8px;" onclick="buyNow()">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stylist Modal -->
+  <div class="modal fade" id="stylistModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Stylist Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="smImg" src="" alt=""
+            style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin-bottom:16px;">
+          <h4 style="font-family:'Playfair Display',serif;" id="smName"></h4>
+          <div style="color:var(--gold);font-size:.75rem;letter-spacing:3px;margin-bottom:16px;" id="smSpec"></div>
+          <p style="color:var(--muted);font-size:.88rem;">Expert stylist with 5+ years of experience in Pakistani &
+            international fashion. Specializes in creating personalized looks for every occasion.</p>
+          <div class="d-flex justify-content-center gap-3 mt-3">
+            <a class="btn-gold" href="#contact" style="border-radius:8px;" data-bs-dismiss="modal">Book Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Confirm Modal -->
+  <div class="modal fade" id="orderModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Order Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="confirm-icon"><i class="fas fa-check"></i></div>
+          <h4 style="font-family:'Playfair Display',serif;color:var(--text);">Order Placed Successfully!</h4>
+          <p style="color:var(--muted);font-size:.88rem;margin-top:8px;">Thank you for shopping with StyleVerse</p>
+          <div class="order-detail text-start">
+            <div class="order-row"><span>Order ID</span><span id="oId" style="color:var(--gold);"></span></div>
+            <div class="order-row"><span>Product</span><span id="oProduct"></span></div>
+            <div class="order-row"><span>Size</span><span id="oSize"></span></div>
+            <div class="order-row"><span>Amount</span><span id="oAmount" style="color:var(--gold);"></span></div>
+            <div class="order-row"><span>Delivery</span><span>3–5 Business Days</span></div>
+            <div class="order-row"><span>Status</span><span style="color:#4caf50;">✓ Confirmed</span></div>
+          </div>
+          <p style="color:var(--muted);font-size:.78rem;margin-top:12px;">A confirmation will be sent to your email
+            address</p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button class="btn-gold" style="border-radius:8px;" data-bs-dismiss="modal">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-shopping-bag me-2" style="color:var(--gold)"></i>Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="cartBody">
+          <p style="color:var(--muted);text-align:center;">Your cart is empty</p>
+        </div>
+        <div class="modal-footer justify-content-between" id="cartFooter" style="display:none!important">
+          <div style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;">Total: <span
+              id="cartTotal">Rs 0</span></div>
+          <button class="btn-gold" style="border-radius:8px;" onclick="checkoutAll()">Checkout <i
+              class="fas fa-arrow-right ms-2"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compare Modal -->
+  <div class="modal fade" id="compareModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-code-compare me-2" style="color:var(--gold)"></i>Product Comparison</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" style="overflow-x:auto;">
+          <table class="compare-table">
+            <thead id="compareTableHead"></thead>
+            <tbody id="compareTableBody"></tbody>
+          </table>
+        </div>
+        <div class="modal-footer justify-content-center gap-3">
+          <button class="btn-gold" style="border-radius:8px;" data-bs-dismiss="modal">Close</button>
+          <button class="compare-clear-btn" onclick="clearCompare();bootstrap.Modal.getInstance(document.getElementById('compareModal')).hide()"><i class="fas fa-trash me-1"></i>Clear Compare</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
