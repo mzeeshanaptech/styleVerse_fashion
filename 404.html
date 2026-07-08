@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | 404 Error</title>
+    <meta name="description" content="The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let us help you get back on track.">
+    <meta name="robots" content="noindex, follow"> <style>
+        :root {
+            --gold: #c9a84c;
+            --gold2: #e8c97a;
+            --dark: #0a0a0f;
+            --dark2: #13131a;
+            --dark3: #1c1c28;
+            --card-bg: #16161f;
+            --text: #f0ece0;
+            --muted: #9a9278;
+            --accent: #e05c7a;
+            --accent2: #7a5ce0;
+            --white: #fff;
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .error-container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--dark3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(45deg, var(--gold), var(--gold2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Search Bar Setup for SEO/UX Retention */
+        .search-form {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            background-color: var(--dark2);
+            border: 1px solid var(--dark3);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        /* Quick Links to pass link equity / guide users */
+        .links-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: calc(var(--radius) / 2);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold2));
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--dark3);
+            color: var(--text);
+            border: 1px solid transparent;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark2);
+            border-color: var(--muted);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .error-code { font-size: 6rem; }
+            h1 { font-size: 1.6rem; }
+            .nav-links { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="error-container">
+        <div class="error-code" aria-hidden="true">404</div>
+        
+        <h1>Lost in the Shadows?</h1>
+        <p>The page you are looking for doesn't exist or has been moved. Try searching for it below, or jump straight back to our main pages.</p>
+
+        <form action="/search" method="get" class="search-form" role="search">
+            <input type="search" name="q" class="search-input" placeholder="Search our site..." required aria-label="Search site content">
+        </form>
+
+        <h2 class="links-title">Helpful Links</h2>
+        <nav class="nav-links" aria-label="404 navigation">
+            <a href="/" class="btn btn-primary">Go to Homepage</a>
+            <a href="/blog" class="btn btn-secondary">Read Our Blog</a>
+            <a href="/services" class="btn btn-secondary">Our Services</a>
+            <a href="/contact" class="btn btn-secondary">Contact Us</a>
+        </nav>
+    </main>
+
+</body>
+</html>
